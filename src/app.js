@@ -122,29 +122,6 @@ Total: ${rupiah(obj.total)}
 Terima kasih.`;
 }
 
-
-// kontact from whatsapp
-const contactForm = document.querySelector('#contactForm');
-
-contactForm.addEventListener('submit', function(e) {
-  e.preventDefault(); // Mencegah reload halaman
-
-  // Ambil data dari input
-  const name = document.querySelector('#contact-name').value;
-  const email = document.querySelector('#contact-email').value;
-  const phone = document.querySelector('#contact-phone').value;
-
-  // Susun pesan WhatsApp
-  const whatsappNumber = '628978303432'; 
-  const message = `Halo Admin.%0A%0A*Data Kontak*%0A- Nama: ${name}%0A- Email: ${email}%0A- No HP: ${phone}`;
-
-  // Buka jendela WhatsApp baru
-  const url = `https://wa.me/${whatsappNumber}?text=${message}`;
-  window.open(url, '_blank');
-});
-
-
-
 // konversi harga ke format IDR
 const rupiah = (number) => {
     return new Intl.NumberFormat("id-ID", {
@@ -153,3 +130,29 @@ const rupiah = (number) => {
         minimumFractionDigits: 0,
     }).format(number);
 };
+
+
+// kontact from whatsapp
+const contactForm = document.querySelector('#contactForm');
+
+// Tambahkan pengecekan ini agar tidak error saat form tidak ditemukan
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Ambil data dari input
+    const name = document.querySelector('#contact-name').value;
+    const email = document.querySelector('#contact-email').value;
+    const phone = document.querySelector('#contact-phone').value;
+
+    // Susun pesan WhatsApp
+    const whatsappNumber = '628978303432';
+    const message = `Halo Admin.%0A%0A*Data Kontak*%0A- Nama: ${name}%0A- Email: ${email}%0A- No HP: ${phone}`;
+
+    // Buka jendela WhatsApp baru
+    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(url, '_blank');
+  });
+}
+
+

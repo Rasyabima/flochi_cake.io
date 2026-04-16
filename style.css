@@ -1393,6 +1393,19 @@ footer .credit a {
     margin: 0.2rem 0;
   }
 
+  /* hero */
+
+  .hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-image: url("img/ultracake.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
   /* about */
 
   .about {
