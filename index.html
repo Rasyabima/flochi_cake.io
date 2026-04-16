@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <link rel="icon" href="/img/logoutama.png" type="image/x-icon">
+    <title>Flochi Cake</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- app js -->
+    <script src="src/app.js" async></script>
+
+     <!-- alpine js -->
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- fonts Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navbar start -->
+    <nav class="navbar" x-data>
+        <img src="/img/logoutama.png" alt="Logo" >
+      
+        <div class="navbar-nav">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="search-button" ><i data-feather="search" stroke-width="3"></i></a>
+            <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart" stroke-width="3"></i>
+            <span class="quantity-badge" x-show=" $store.cart.quantity" x-text="$store.cart.quantity"></span></a>
+            <a href="#" id="hamburger-menu"><i data-feather="menu" stroke-width="3"></i></a>
+        </div>
+
+        <!-- search form start -->
+         <div class="search-form">
+          <input type="search" id="search-box" placeholder="search here...">
+          <label for="search-box"></label>
+         </div>
+        <!-- search form end -->
+
+        <!-- shopping cart start -->
+         <div class="shopping-cart" x-data>
+          <template x-for="(item, index) in $store.cart.items" x-keys="index">
+          <div class="cart-item">
+            <img :src="`img/produk/${item. img}`" :alt="item.name">
+            <div class="item-detail">
+              <h3 x-text="item.name"></h3>
+              <div class="item-price">
+                <span x-text="rupiah(item.price)"></span> &times;
+                <button id="remove" @click="$store.cart.remove(item.id)"> &minus;</button>
+                <span x-text="item.quantity"></span>
+                <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+                <span x-text="rupiah(item.total)"></span>
+              </div>
+            </div>
+           
+          </div>
+          </template>
+
+          <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart Is Empty</h4>
+          <h4 x-show="$store.cart.items.length">Total:<span x-text="rupiah($store.cart.total)"></span></h4>
+
+
+          <div class="form-container" x-show="$store.cart.items.length">
+
+            <form action="" id="checkoutForm">
+              <input type="hidden"  name="items" x-model="JSON.stringify($store.cart.items)">
+              <input type="hidden"  name="total" x-model="$store.cart.total">
+              <h5>Customer Detail</h5>
+
+              <label for="name">
+                <span>Name</span>
+                <input type="text" name="name" id="name">
+              </label>
+
+                <label for="email">
+                <span>Email</span>
+                <input type="email" name="email" id="email">
+              </label>
+
+                <label for="phone">
+                <span>Phone</span>
+                <input type="number" name="phone" id="phone">
+              </label>
+
+              <label for="address">
+  <span>Address</span>
+  <input type="text" name="address" id="address">
+</label>
+
+        <label for="address">
+  <span>Pesan</span>
+  <input type="text" name="pesan" id="pesan">
+</label>
+
+              <button class="checkout-button disabled" type="submit" id="chekout-button" value="checkout"> Checkout </button>
+
+            </form>
+
+
+          </div>
+          </div> 
+        <!-- shopping cart end -->
+    </nav>
+
+    <!-- navbar end -->
+
+    <!-- hero section start -->
+    <section class="hero" id="home">
+        <main class="content">
+            <h1> Kebahagiaan Setiap Satu Suapan<span> Flochi Cake</span>.</h1>
+            <p>Rasakan sensasi kue souffle yang super lembut dan lumer di mulut. Dibuat dengan bahan premium pilihan untuk memberikan tekstur seringan awan yang akan memanjakan lidah Anda di setiap gigitan.</p>
+            <a href="#products" class="cta">Beli sekarang</a>
+
+        </main>
+       
+    </section>
+
+    <!-- hero section end -->
+
+    <!-- abaout section -->
+     <section id="about" class="about">
+      <h2><span>Tentang</span> Kami</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="/img/tentang-saya.jpg" alt="Tenatng kami">
+        </div>
+        <div class="content">
+          <h3>Kenapa Memilih Kami?</h3>
+          <p>Flochi Cake adalah persembahan kreatif siswa kelas XII PPLG 1, Kelompok 3, dari SMK Andalusia melalui Projek Kokulikuler Kewirausahawan. Berawal dari semangat belajar dan inovasi di ruang praktik sekolah, kami hadir untuk membuktikan bahwa karya pelajar mampu bersaing dengan kualitas profesional. Setiap kue yang kami buat merupakan hasil kolaborasi, dedikasi, dan ketelitian untuk menghadirkan kebahagiaan dalam bentuk sajian yang istimewa bagi Anda.</p>
+          
+      </div>
+
+
+     </section>
+    <!-- abaout end-->
+
+    <!-- menu section start -->
+
+       <section class="menu" id="menu">
+      <h2><span>Menu </span>Kami</h2>
+      <p>Nikmati berbagai varian rasa autentik yang dirancang untuk memanjakan lidah Anda. Dari rasa cokelat yang klasik hingga sentuhan matcha yang menenangkan, setiap pilihan adalah keajaiban kecil dalam satu piring.</p>
+
+      <div class="row">
+        <div class="product1-card">
+
+          <div class="product1-icons">
+      
+            <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product1-image">
+            <img src="/img/produk/1.jpg" alt="">
+          </div>
+          <div class="product1-content">
+            <h3>souffle cake matcha</h3>
+            <div class="product1-starts">
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+            </div>
+            <div class="product1-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+
+
+          <div class="product1-card">
+          <div class="product1-icons">
+    
+            <a href="#" class="item-detail-button2"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product1-image">
+            <img src="/img/produk/2.jpg" alt="">
+          </div>
+          <div class="product1-content">
+            <h3>souffle cake chocolate</h3>
+            <div class="product1-starts">
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="i"></i>
+            </div>
+            <div class="product1-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+
+
+          <div class="product1-card">
+          <div class="product1-icons">
+          
+            <a href="#" class="item-detail-button3" ><i data-feather="eye"></i></a>
+          </div>
+          <div class="product1-image">
+            <img src="/img/produk/3.jpg" alt="">
+          </div>
+          <div class="product1-content">
+            <h3>Coffee Beans 3</h3>
+            <div class="product1-starts">
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+            </div>
+            <div class="product1-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+
+          <div class="product1-card">
+          <div class="product1-icons">
+      
+            <a href="#" class="item-detail-button4"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product1-image">
+            <img src="/img/produk/4.jpg" alt="">
+          </div>
+          <div class="product1-content">
+            <h3>Coffee Beans 4</h3>
+            <div class="product1-starts">
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+            </div>
+            <div class="product1-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+
+
+          <div class="product1-card">
+          <div class="product1-icons">
+      
+            <a href="#" class="item-detail-button5"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product1-image">
+            <img src="/img/produk/5.jpg" alt="">
+          </div>
+          <div class="product1-content">
+            <h3>Coffee Beans 5</h3>
+            <div class="product1-starts">
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+              <i data-feather="star"  class="star"></i>
+            </div>
+            <div class="product1-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+        
+      </div>
+     </section>
+    <!-- menu section end -->
+
+    <!-- produk section start -->
+     <section class="products" id="products" x-data="products">
+      <h2><span>Produk  </span>Kami</h2>
+      <p>Kami menyajikan fluffy pancake dengan kualitas artisan yang dibuat secara dadakan (freshly baked) untuk menjaga kualitas tekstur dan rasa.</p>
+
+      <div class="row">
+        <template x-for="(item, index) in items" x-key="index">
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#" @click.prevent="$store.cart.add(item)">
+              <svg
+  width="24"
+  height="24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="img/feather-sprite.svg#shopping-cart" />
+</svg>
+            </a>
+          </div>
+          <div class="product-image">
+            <img :src="`/img/produk/${item.img}`" :alt="item.name">
+          </div>
+          <div class="product-content">
+            <h3 x-text="item.name"></h3>
+          
+            <div class="product-price" x-text="rupiah(item.price)" ></div>
+          </div>
+        </div>
+        </template>
+      </div>
+     </section>
+    <!-- produk section end -->
+
+    <!-- contact section start-->
+     <section class="contact" id="contact">
+      <h2><span>Kontak</span> Kami</h2>
+      <p>Ingin memesan atau sekadar bertanya tentang produk kami? Jangan ragu untuk menghubungi kami melalui saluran di bawah ini</p>
+
+      <div class="row">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.782787191743!2d109.9487198!3d-7.378224199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a9f5876ca3663%3A0x22804cf844b9c878!2sSMK%20Andalusia!5e0!3m2!1sid!2sid!4v1776037552561!5m2!1sid!2sid"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form action="" id="contactForm">
+  <div class="input-group">
+    <i data-feather="user"></i>
+    <input type="text" id="contact-name" placeholder="Nama" required>
+  </div>
+  <div class="input-group">
+    <i data-feather="mail"></i>
+    <input type="email" id="contact-email" placeholder="Email" required>
+  </div>
+  <div class="input-group">
+    <i data-feather="phone"></i>
+    <input type="number" id="contact-phone" placeholder="No Hp" required>
+  </div>
+  <button type="submit" class="btn">Kirim</button>
+</form>
+      </div>
+
+
+     
+     </section>
+     
+    <!-- contact section end -->
+
+    <!-- footer section start -->
+     <footer>
+      <div class="socials">
+        <a href="https://www.instagram.com/akknazk2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i data-feather="instagram"></i> </a>
+        <a href="#"><i data-feather="twitter"></i> </a>
+        <a href="#"><i data-feather="facebook"></i> </a>
+
+      </div>
+
+      <div class="links">
+          <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="#">Flochi Cake Production</a> | &copy; 2026 All rights reserved.</p>
+      </div>
+     </footer>
+
+    <!-- footer section end -->
+
+    <!-- Modal Box Item Detail Start -->
+
+     <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="/img/produk/1.jpg" alt="">
+          <div class="product-content">
+            <h3>  Souffle Cake Matcha</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facilis odit fuga maiores, maxime id, error officia blanditiis eaque ducimus nisi veritatis consectetur, saepe omnis!</p>
+            <div class="product-starts">
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+
+     <div class="modal2" id="item-detail-modal2">
+      <div class="modal2-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal2-content">
+          <img src="/img/produk/2.jpg" alt="">
+          <div class="product-content">
+            <h3>souffle cake chocolate</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facilis odit fuga maiores, maxime id, error officia blanditiis eaque ducimus nisi veritatis consectetur, saepe omnis!</p>
+            <div class="product-starts">
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+
+      <div class="modal3" id="item-detail-modal3">
+      <div class="modal3-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal3-content">
+          <img src="/img/produk/3.jpg" alt="">
+          <div class="product-content">
+            <h3>Product 3</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facilis odit fuga maiores, maxime id, error officia blanditiis eaque ducimus nisi veritatis consectetur, saepe omnis!</p>
+            <div class="product-starts">
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+
+          </div>
+        </div>
+      </div>
+     </div>
+
+
+      <div class="modal4" id="item-detail-modal4">
+      <div class="modal4-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal4-content">
+          <img src="/img/produk/4.jpg" alt="">
+          <div class="product-content">
+            <h3>Product 4</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facilis odit fuga maiores, maxime id, error officia blanditiis eaque ducimus nisi veritatis consectetur, saepe omnis!</p>
+            <div class="product-starts">
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+
+          </div>
+        </div>
+      </div>
+     </div>
+
+
+
+      <div class="modal5" id="item-detail-modal5">
+      <div class="modal5-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal5-content">
+          <img src="/img/produk/5.jpg" alt="">
+          <div class="product-content">
+            <h3>Product 5</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo facilis odit fuga maiores, maxime id, error officia blanditiis eaque ducimus nisi veritatis consectetur, saepe omnis!</p>
+            <div class="product-starts">
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+              <i data-feather="star"  class="star" fill="currentColor"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+
+          </div>
+        </div>
+      </div>
+     </div>
+    <!-- Modal Box Item Detail end -->
+
+
+
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- my javascript -->
+    <script src="script.js"></script>
+
+  </body>
+</html>
