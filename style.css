@@ -1197,6 +1197,9 @@ footer .credit a {
   .navbar .navbar-nav a:hover::after {
     transform: scaleX(0.3);
   }
+  .navbar .navbar-extra {
+    padding: 0 2px;
+  }
 
   .navbar .search-form {
     right: 2rem;
@@ -1396,15 +1399,15 @@ footer .credit a {
   /* hero */
 
   .hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  background-image: url("img/ultracake.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-image: url("img/ultracake.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 
   /* about */
 
@@ -1506,5 +1509,46 @@ footer .credit a {
     text-decoration: line-through;
     font-weight: lighter;
     font-size: 1rem;
+  }
+
+  /* modal */
+  .modal-content img {
+    height: 15rem;
+    width: 15rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+  }
+
+  .modal2-content img {
+    height: 15rem;
+    width: 15rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+  }
+
+  .modal3-content img {
+    height: 15rem;
+    width: 15rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+  }
+
+  .modal4-content img {
+    height: 15rem;
+    width: 15rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+  }
+
+  .modal5-content img {
+    height: 15rem;
+    width: 15rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
   }
 }
