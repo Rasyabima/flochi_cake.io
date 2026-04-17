@@ -494,11 +494,15 @@ body {
 .menu .product1-starts {
   font-size: 1.7rem;
   padding: 0.8rem;
+  margin-left: -10px;
   color: var(--first);
+ 
 }
 
 .menu .product1-starts .star {
   fill: var(--first);
+   height: 2rem;
+  width: 2rem;
 }
 
 .menu .product1-price {
@@ -1512,41 +1516,145 @@ footer .credit a {
   }
 
   /* modal */
+ 
+
+  .modal-container {
+    position: relative;
+    background-color: var(--primary);
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 3px solid var(--main);
+    width: 80%;
+    height: 300px;
+    animation: animateModal 0.3s;
+    border-radius: 5px;
+    color: var(--main);
+  }
+
+  .modal2-container {
+    position: relative;
+    background-color: var(--primary);
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 3px solid var(--main);
+    width: 80%;
+    height: 300px;
+    animation: animateModal 0.3s;
+    border-radius: 5px;
+    color: var(--main);
+  }
+
+  .modal3-container {
+    position: relative;
+    background-color: var(--primary);
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 3px solid var(--main);
+    width: 80%;
+    height: 300px;
+    animation: animateModal 0.3s;
+    border-radius: 5px;
+    color: var(--main);
+  }
+
+  .modal4-container {
+    position: relative;
+    background-color: var(--primary);
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 3px solid var(--main);
+    width: 80%;
+    height: 300px;
+    animation: animateModal 0.3s;
+    border-radius: 5px;
+    color: var(--main);
+  }
+
+  .modal5-container {
+    position: relative;
+    background-color: var(--primary);
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 3px solid var(--main);
+    width: 80%;
+    height: 300px;
+    animation: animateModal 0.3s;
+    border-radius: 5px;
+    color: var(--main);
+  }
+
+
+  .modal-content .product-starts .star {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+   .modal2-content .product-starts .star {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+   .modal3-content .product-starts .star {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+   .modal4-content .product-starts .star {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+   .modal5-content .product-starts .star {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+
+   .modal-content .product-starts .star {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
   .modal-content img {
-    height: 15rem;
-    width: 15rem;
+    height: 12rem;
+    width: 12rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     border-radius: 20px;
   }
 
   .modal2-content img {
-    height: 15rem;
-    width: 15rem;
+    height: 12rem;
+    width: 12rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     border-radius: 20px;
   }
 
   .modal3-content img {
-    height: 15rem;
-    width: 15rem;
+    height: 12rem;
+    width: 12rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     border-radius: 20px;
   }
 
   .modal4-content img {
-    height: 15rem;
-    width: 15rem;
+    height: 12rem;
+    width: 12rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     border-radius: 20px;
   }
 
   .modal5-content img {
-    height: 15rem;
-    width: 15rem;
+    height: 12rem;
+    width: 12rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     border-radius: 20px;
