@@ -1,7 +1,12 @@
 document.addEventListener("alpine:init", () => {
   Alpine.data("products", () => ({
     items: [
-      { id: 1, name: "souffle cake chocolate", img: "coklat.jpeg", price: 10000 },
+      {
+        id: 1,
+        name: "souffle cake chocolate",
+        img: "coklat.jpeg",
+        price: 10000,
+      },
       {
         id: 2,
         name: "souffle cake matcha",
@@ -14,8 +19,12 @@ document.addEventListener("alpine:init", () => {
         img: "redvelvet.jpg",
         price: 10000,
       },
-      { id: 4, name: "souffle cake tiramisu", img: "tiramisu.jpeg", price: 10000 },
-      // { id: 5, name: "Cheesecake", img: "5.jpg", price: 35000 },
+      {
+        id: 4,
+        name: "souffle cake tiramisu",
+        img: "tiramisu.jpeg",
+        price: 10000,
+      },
     ],
   }));
 
