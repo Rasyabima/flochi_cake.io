@@ -326,22 +326,22 @@ body {
   margin-bottom: 3rem;
 }
 
-.hero .content .cta {
-  margin-top: 3rem;
+.hero .content a {
+  margin-top: 1rem;
   display: inline;
   padding: 1rem 3rem;
   font-weight: bold;
   font-size: 1.4rem;
   background-color: var(--primary);
   border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(255, 245, 245, 0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   text-shadow: none !important;
   cursor: pointer;
   color: var(--main);
   transition: 0.5s;
 }
 
-.hero .content .cta:hover {
+.hero .content a:hover {
   color: var(--first);
   background-color: var(--hover);
   cursor: pointer;
@@ -489,6 +489,7 @@ body {
 
 .menu .product1-content h3 {
   font-size: 2rem;
+   text-shadow: none !important;
 }
 
 .menu .product1-starts {
@@ -505,9 +506,10 @@ body {
 }
 
 .menu .product1-price {
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 500;
   padding-bottom: 2rem;
+   text-shadow: none !important;
 }
 
 .menu .product1-price span {
@@ -593,6 +595,7 @@ body {
   font-size: 1.3rem;
   font-weight: bold;
   padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .products .product-price span {
@@ -1423,24 +1426,29 @@ footer .credit a {
   .menu .row {
     justify-content: center;
     align-items: center;
-    display: grid;
-    /* Mengubah grid menjadi 1 kolom penuh */
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0 1rem; /* Tambahkan padding agar kartu tidak menempel ke pinggir layar */
-  }
+   
+  display: grid;
+  /* Ubah 40rem menjadi sekitar 25rem - 30rem agar bisa muat 3 kolom */
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 2fr));
+  gap: 1rem; /* Tambahkan gap agar antar kartu ada jarak */
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+   
 
   .menu .product1-card {
     position: relative;
     text-align: center;
-    border: 4px solid var(--main);
+    border: 2px solid var(--main);
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    padding-top: 2rem;
     margin: 1rem 0;
     padding-left: 1rem;
     border-radius: 10px;
     background-color: var(--primary);
+    padding-top: 2rem;
   }
 
   .menu .product1-icons {
@@ -1450,8 +1458,8 @@ footer .credit a {
   }
 
   .menu .product1-icons a {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     top: 0.5rem;
     right: 0.5rem;
     color: #fff;
@@ -1463,6 +1471,7 @@ footer .credit a {
     border-radius: 50%;
     transition: 0.4s;
     padding: 6px;
+  
   }
 
   .menu .product1-icons a:hover {
@@ -1475,7 +1484,7 @@ footer .credit a {
     padding: 1rem 0;
   }
   .menu .product1-image img {
-    height: 15rem;
+    height: 8rem;
     width: auto;
     border-radius: 5px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
@@ -1483,6 +1492,7 @@ footer .credit a {
 
   .menu .product1-content h3 {
     font-size: 1.3rem;
+    padding-bottom: 1rem;
   }
 
   .menu .product1-starts {
@@ -1504,8 +1514,8 @@ footer .credit a {
 
   .menu .product1-price {
     font-size: 1rem;
-    font-weight: bold;
-    padding-bottom: 2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
   }
 
   .menu .product1-price span {
@@ -1514,6 +1524,97 @@ footer .credit a {
     font-size: 1rem;
   }
 
+
+  /* product */
+
+  .products {
+  min-height: 100vh; /* Minimal setinggi layar, tapi akan memanjang jika konten bertambah */
+  height: auto; /* Pastikan height auto agar menyesuaikan konten */
+}
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 2px solid var(--main);
+  padding: 1rem;
+   margin: 1rem 2px;
+  /* margin: 0.5rem; */
+  border-radius: 10px;
+  background-color: var(--primary);
+  text-shadow: none !important;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  /* gap: 0.5rem; */
+  /* margin-top: 1rem; */
+  
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  /* margin: 0.3rem; */
+  border: 2px solid var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.4s;
+  padding: 7px;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--hover);
+  border: 2px solid var(--hover);
+  color: var(--main);
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 10rem;
+  border-radius: 20px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
+}
+
+.products .product-content h3 {
+  font-size: 1.3rem;
+  
+}
+
+.products .product-starts {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: var(--first);
+}
+
+.products .product-starts .star {
+  fill: var(--first);
+}
+
+.products .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+  
   /* modal */
 
   .modal-container {
@@ -1655,4 +1756,50 @@ footer .credit a {
     margin-bottom: 2rem;
     border-radius: 20px;
   }
+
+  
+}
+
+
+@media (max-width: 390px) {
+   .menu .row {
+    justify-content: center;
+    align-items: center;
+  display: grid;
+  /* Ubah 40rem menjadi sekitar 25rem - 30rem agar bisa muat 3 kolom */
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem; /* Tambahkan gap agar antar kartu ada jarak */
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+  .products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.1rem;
+  margin-top: 4rem;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  /* gap: 0.5rem; */
+  /* margin-top: 1rem; */
+  
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  /* margin: 0.1rem; */
+  border: 2px solid var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.4s;
+  padding: 7px;
+}
+
 }
