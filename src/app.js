@@ -15,7 +15,7 @@ document.addEventListener("alpine:init", () => {
         price: 10000,
       },
       { id: 4, name: "souffle cake tiramisu", img: "tiramisu.jpeg", price: 10000 },
-      { id: 5, name: "Cheesecake", img: "5.jpg", price: 35000 },
+      // { id: 5, name: "Cheesecake", img: "5.jpg", price: 35000 },
     ],
   }));
 
