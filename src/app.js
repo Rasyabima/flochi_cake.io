@@ -15,12 +15,6 @@ document.addEventListener("alpine:init", () => {
       },
       {
         id: 3,
-        name: "souffle cake red velvet",
-        img: "redvelvet.jpg",
-        price: 10000,
-      },
-      {
-        id: 4,
         name: "souffle cake tiramisu",
         img: "tiramisu.jpeg",
         price: 10000,
