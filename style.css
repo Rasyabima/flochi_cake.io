@@ -136,15 +136,7 @@ body {
   position: relative;
 }
 
-#shopping-cart-button .quantity-badge {
-  display: inline-block;
-  padding: 1px 5px;
-  background-color: red;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  position: absolute;
-  right: -10px;
-}
+
 
 .shopping-cart {
   position: absolute;
@@ -225,6 +217,17 @@ body {
   text-align: center;
 
   text-shadow: none !important;
+}
+
+#shopping-cart-button .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: rgb(255, 0, 0, 0.9);
+  border-radius: 10px;
+  font-size: 0.7rem;
+  position: absolute;
+  right: -9px;
+  
 }
 
 /* checkout form */
