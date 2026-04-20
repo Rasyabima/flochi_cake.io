@@ -3,7 +3,7 @@
   --hover: #ab3a20;
   --main: #f7c37e;
   --first: #ffddbd;
-  --bg: #0a0a0a; /* Sedikit lebih terang dari hitam pekat */
+  --bg: #000000; /* Sedikit lebih terang dari hitam pekat */
   --white: #ffffff;
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
