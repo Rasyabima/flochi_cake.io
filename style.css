@@ -346,7 +346,16 @@ body {
   color: var(--first);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   mix-blend-mode: difference;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero .content h2 {
+   text-shadow: none !important;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    /* mix-blend-mode: difference; */
+    
+    color: var(--main);
 }
 
 .hero .content a {
@@ -567,6 +576,16 @@ body {
 .products {
   min-height: 100vh; /* Minimal setinggi layar, tapi akan memanjang jika konten bertambah */
   height: auto; /* Pastikan height auto agar menyesuaikan konten */
+}
+
+.products h3 {
+   text-shadow: none !important;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: center;
+
+
 }
 .products .row {
   display: grid;
@@ -1180,6 +1199,13 @@ footer .credit a {
     padding-top: 15px;
     font-weight: 500;
     text-shadow: none !important;
+  }
+
+
+  /* about */
+
+  .about {
+    height: auto;
   }
 
   /* menu */

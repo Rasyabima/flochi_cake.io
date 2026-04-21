@@ -112,10 +112,10 @@ checkoutButton.addEventListener("click", function (e) {
 const formatMassage = (obj) => {
   return `Data Customer
     Nama: ${obj.name}
-    Email: ${obj.email}
     No HP: ${obj.phone}
     Alamat: ${obj.address}
     Pesan: ${obj.pesan}
+    \n
 Data Pesanan
     ${JSON.parse(obj.items).map((item) => `${item.name} (${item.quantity} x ${rupiah(item.total)}) \n`)}
     
