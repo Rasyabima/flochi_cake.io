@@ -48,9 +48,6 @@
           <use href="img/feather-sprite.svg#search"/>
           </svg>
             </a>
-
-
-
             <!-- <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart" stroke-width="3"></i> -->
                  <a href="#" id="shopping-cart-button">
               <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -59,19 +56,25 @@
            <span class="quantity-badge" x-show=" $store.cart.quantity" x-text="$store.cart.quantity"></span>
             
             </a>
-           
+
+
+              <a href="#" id="teka-teki-button">
+              <svg width="23" height="23" fill="none"stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <use href="img/feather-sprite.svg#book"/>
+          </svg>
+    
+            </a>
             <!-- <a href="#" id="hamburger-menu"><i data-feather="menu" stroke-width="3"></i></a> -->
                  <a href="#" id="hamburger-menu">
               <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#menu"/>
           </svg>
             </a>
-
         </div>
 
         <!-- search form start -->
          <div class="search-form">
-          <input type="search" id="search-box" placeholder="search here...">
+          <input type="search" id="search-box" placeholder="Search here...">
           <label for="search-box"></label>
          </div>
         <!-- search form end -->
@@ -117,8 +120,9 @@
                 <input type="number" name="phone" id="phone">
                 </label>
 
-              <label for="address">
-  <label>tempat</label>
+              
+  <label  for="address">
+  <span>Address</span>
   <input type="text" name="address" id="address">
 </label>
 
@@ -190,7 +194,6 @@
           </svg>
             </a>
 
-
           </div>
           <div class="product1-image">
             <img src="img/produk/coklat.jpeg" alt="">
@@ -236,7 +239,6 @@
 
           <div class="product1-card">
           <div class="product1-icons">
-      
               <a href="#" class="item-detail-button">
               <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#eye"/>
@@ -260,7 +262,6 @@
         </div>
 
 
-        
       </div>
      </section>
     <!-- menu section end -->
@@ -343,19 +344,19 @@
      <footer>
       <div class="socials">
         <!-- <a href="https://www.instagram.com/akknazk2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i data-feather="instagram"></i> </a> -->
-          <a href="#" >
+          <a href="https://www.instagram.com/akknazk2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"> 
               <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#instagram"/>
           </svg>
             </a>
         <!-- <a href="#"><i data-feather="twitter"></i> </a> -->
-          <a href="#" >
+          <a href="https://x.com/FlochiCake3" target="_blank">
               <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#twitter"/>
           </svg>
             </a>
         <!-- <a href="#"><i data-feather="facebook"></i> </a> -->
-          <a href="#" >
+          <a href="https://www.facebook.com/Akknazk" target="_blank">
               <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#facebook"/>
           </svg>
@@ -380,9 +381,10 @@
 
     <!-- Modal Box Item Detail Start -->
 
-     <div class="modal" id="item-detail-modal">
+     <div class="modal" id="item-detail-modal"  >
       <div class="modal-container">
         <!-- <a href="#" class="close-icon"><i data-feather="x"></i></a> -->
+         
            <a href="#" class="close-icon">
               <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#x"/>
@@ -390,7 +392,7 @@
             </a>
         <div class="modal-content">
           <img src="img/produk/coklat.jpeg" alt="">
-          <div class="product-content">
+          <di class="product-content">
             <h3>  Souffle Cake Matcha</h3>
             <p>Souffle pancake yang lembut dengan tambahan toping rasa coklat lumer yang lezat</p>
             <div class="product-starts">
@@ -400,7 +402,14 @@
               <i data-feather="star"  class="star" fill="currentColor"></i>
               <i data-feather="star"  class="star" fill="currentColor"></i>
             </div>
-            <div class="product-price">Rp 10.000</div> </div>
+            <div class="product-price">Rp 10.000</div> 
+
+             <a href="#products" id="#cart-product"> 
+              <svg width="24" height="24"fill="none"stroke="currentColor"stroke-width="2"stroke-linecap="round" stroke-linejoin="round">
+          <use href="img/feather-sprite.svg#shopping-cart" />
+          </svg>
+            </a>
+
           </div>
         </div>
       </div>
@@ -463,6 +472,29 @@
 
 
     <!-- Modal Box Item Detail end -->
+
+    <!-- teka teki Modal start-->
+
+      <div class="tekateki" id="teka-teki-modal">
+      <div class="tekateki-container">
+        <!-- <a href="#" class="close-icon"><i data-feather="x"></i></a> -->
+          <a href="#" id="close-teka-teki">
+              <svg width="24" height="24"fill="none"stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <use href="img/feather-sprite.svg#x"/>
+          </svg>
+            </a>
+        <div class="tekateki-content">
+          <h1>Teka-Teki (tahap pengembangan)</h1> <br>
+
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque vero dolorum asperiores a dolorem tenetur iusto harum saepe laudantium! Laudantium ipsa ea molestiae eos tenetur facere! Fugiat dolorem facere, atque consectetur ipsum laborum earum perspiciatis fuga voluptate. Provident sint mollitia eius non ratione. Quisquam ut sit amet laborum. Laboriosam blanditiis nisi iste eius! Nobis quam, quod praesentium id pariatur fugiat animi recusandae sed veritatis, laborum quisquam, harum illo sequi quis molestiae architecto voluptate? Provident rem nam itaque autem praesentium vero iusto enim porro ullam reiciendis, ea quod nesciunt aliquid temporibus modi quisquam saepe aut harum quidem blanditiis in aperiam! Reiciendis quis facilis nihil maiores veritatis, commodi sequi natus excepturi minima nesciunt temporibus asperiores rem, nam id amet exercitationem repudiandae voluptatem blanditiis impedit iusto ullam eveniet nobis! Sint in earum nulla, impedit repudiandae sed inventore laboriosam odit, aspernatur consectetur nemo illum necessitatibus consequatur? Nulla molestias nihil corrupti nesciunt voluptas ad dolorem, sequi quae exercitationem explicabo quaerat reiciendis adipisci, qui deserunt minus ipsa! Quam quisquam repellendus fugit perferendis dolorum facilis placeat provident quasi. Obcaecati, sapiente beatae. Temporibus nesciunt modi dolores illum delectus! Autem sed obcaecati sint iusto repellendus architecto dolorum minus, aut, aliquam neque cupiditate delectus ut blanditiis beatae deserunt quisquam quaerat?</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque vero dolorum asperiores a dolorem tenetur iusto harum saepe laudantium! Laudantium ipsa ea molestiae eos tenetur facere! Fugiat dolorem facere, atque consectetur ipsum laborum earum perspiciatis fuga voluptate. Provident sint mollitia eius non ratione. Quisquam ut sit amet laborum. Laboriosam blanditiis nisi iste eius! Nobis quam, quod praesentium id pariatur fugiat animi recusandae sed veritatis, laborum quisquam, harum illo sequi quis molestiae architecto voluptate? Provident rem nam itaque autem praesentium vero iusto enim porro ullam reiciendis, ea quod nesciunt aliquid temporibus modi quisquam saepe aut harum quidem blanditiis in aperiam! Reiciendis quis facilis nihil maiores veritatis, commodi sequi natus excepturi minima nesciunt temporibus asperiores rem, nam id amet exercitationem repudiandae voluptatem blanditiis impedit iusto ullam eveniet nobis! Sint in earum nulla, impedit repudiandae sed inventore laboriosam odit, aspernatur consectetur nemo illum necessitatibus consequatur? Nulla molestias nihil corrupti nesciunt voluptas ad dolorem, sequi quae exercitationem explicabo quaerat reiciendis adipisci, qui deserunt minus ipsa! Quam quisquam repellendus fugit perferendis dolorum facilis placeat provident quasi. Obcaecati, sapiente beatae. Temporibus nesciunt modi dolores illum delectus! Autem sed obcaecati sint iusto repellendus architecto dolorum minus, aut, aliquam neque cupiditate delectus ut blanditiis beatae deserunt quisquam quaerat?</p>
+          <div class="product-content">
+            
+          </div>
+        </div>
+      </div>
+     </div>
+    <!-- teka teki Modal start-->
 
 
 

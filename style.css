@@ -32,11 +32,9 @@ body {
   align-items: center;
   padding: 1.4rem 7%; /* fungsi 7% mempertahankan ukuran 7% padding di semua ukuran layar */
   border-bottom: 3px solid var(--main);
-
-  backdrop-filter: blur(10px); /* Efek kaca transparan */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(7px); /* Efek kaca transparan */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
   border-bottom: 1px solid rgba(247, 195, 126, 0.2); /* Border lebih tipis */
-
   position: fixed;
   top: 0;
   left: 0;
@@ -61,13 +59,18 @@ body {
   padding-top: 15px;
   font-weight: 500;
   text-shadow: none !important;
+   transition:
+    transform 0.4s ease,
+    box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .navbar .navbar-nav a:hover {
+  transform: translateY(-5px);
   color: var(--first);
-  transition: 0.3s;
+  transition: 0.5s;
 }
-
+/* 
 .navbar .navbar-nav a::after {
   content: "";
   display: block;
@@ -80,16 +83,22 @@ body {
 
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(1);
-}
+} */
 
 .navbar .navbar-extra a {
   color: var(--main);
   margin: 0 0.5rem;
+    transition:
+    transform 0.4s ease,
+    box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-.navbar .navbar-extra a:hover {
+.navbar-extra a:hover {
   color: var(--first);
-  transition: 0.3s;
+   transform: translateY(-5px);
+  transition: 0.5s;
+
 }
 
 #hamburger-menu {
@@ -110,6 +119,7 @@ body {
   transform: scaleY(0);
   transform-origin: top;
   transition: 0.3s;
+   border-radius: 30px;
 }
 
 .navbar .search-form.active {
@@ -121,11 +131,20 @@ body {
   height: 100%;
   padding: 1rem;
   font-size: 1.6rem;
-  color: #333;
+  color: var(--main);
+  font-weight: 500;
+    border-radius: 10px;
+ 
+}
+
+
+.navbar .search-form input::placeholder {
+  color: var(--main);
   font-weight: 500;
 }
+
 .navbar .search-form label {
-  color: #ffffff;
+  color: var(--main);
   font-size: 2rem;
   cursor: pointer;
   margin: 0rem;
@@ -312,12 +331,12 @@ body {
   position: absolute;
   display: block;
   width: 100%;
-  height: 30%;
+  height: 27%;
   bottom: 0;
   background: linear-gradient(
     0deg,
-    rgba(1, 1, 3, 1) 8%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(5, 5, 5, 5) 10%,
+    rgba(255, 255, 255, 0) 100%
   );
 }
 
@@ -327,9 +346,9 @@ body {
 }
 
 .hero .content h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   color: var(--main);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(146, 106, 74, 0.9);
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -1px;
@@ -346,15 +365,12 @@ body {
   color: var(--first);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   mix-blend-mode: difference;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
-
 .hero .content h2 {
    text-shadow: none !important;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    /* mix-blend-mode: difference; */
-    
+    font-size: 1.2rem; 
     color: var(--main);
 }
 
@@ -371,7 +387,7 @@ body {
   transition: 0.5s;
 
   border-radius: 50px; /* Tombol lebih membulat (modern) */
-  padding: 1.2rem 3.5rem;
+  padding: 1rem 3rem;
   box-shadow: 0 10px 20px rgba(110, 40, 25, 0.4);
 }
 
@@ -464,7 +480,7 @@ body {
 .menu .row {
   display: grid;
   /* Ubah 40rem menjadi sekitar 25rem - 30rem agar bisa muat 3 kolom */
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1.5rem; /* Tambahkan gap agar antar kartu ada jarak */
   margin-top: 2rem;
 }
@@ -584,13 +600,14 @@ body {
     font-size: 0.8rem;
     font-weight: 300;
     text-align: center;
+    /* margin-bottom: -30px; */
 
 
 }
 .products .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1, 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  gap: 0.1rem;
   margin-top: 4rem;
 }
 
@@ -598,7 +615,7 @@ body {
   text-align: center;
   border: 4px solid var(--main);
   padding: 2ewm;
-  margin: 2rem;
+  margin: 0.5rem;
   border-radius: 10px;
   text-shadow: none !important;
 
@@ -642,7 +659,7 @@ body {
 }
 
 .products .product-image img {
-  height: 20rem;
+  height: 15rem;
   border-radius: 20px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
   transition: transform 0.5s ease;
@@ -650,7 +667,8 @@ body {
 
 .products .product-content h3 {
   font-size: 2rem;
-  padding-bottom: 15v px;
+  padding-bottom: 5px;
+  font-weight: 700;
 }
 
 .products .product-starts {
@@ -729,11 +747,19 @@ body {
   display: inline-block;
   padding: 1rem 4rem;
   font-weight: bolder;
-  color: #fff;
+  color: var(--main);
   background-color: var(--hover);
   cursor: pointer;
   border-radius: 10px;
   font-size: 1rem;
+   transition: 0.3s;
+}
+
+.contact .row form .btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.5);
+  color: var(--first);
+ 
+  
 }
 
 /* footer */
@@ -1077,8 +1103,9 @@ footer .credit a {
 
 /* modal 3 end */
 
-/* modal 4 start */
-.modal4 {
+/* tekateki */
+
+.tekateki {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -1086,7 +1113,7 @@ footer .credit a {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
   background-color: rgba(
     0,
     0,
@@ -1096,7 +1123,7 @@ footer .credit a {
   backdrop-filter: blur(5px); /* Efek blur di belakang modal */
 }
 
-.modal4-container {
+.tekateki-container {
   position: relative;
   background-color: var(--primary); /* Warna putih agar bersih */
   color: var(--main); /* Teks gelap agar mudah dibaca */
@@ -1107,6 +1134,8 @@ footer .credit a {
   max-width: 800px;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
+  overflow: auto;
 }
 
 @keyframes modalMuncul {
@@ -1120,7 +1149,7 @@ footer .credit a {
   }
 }
 
-/* modal animation */
+/* tekateki animation */
 @keyframes animateModal {
   from {
     top: -300px;
@@ -1132,7 +1161,7 @@ footer .credit a {
   }
 }
 
-.modal4-container .close-icon {
+.tekateki-container #close-teka-teki {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
@@ -1140,20 +1169,25 @@ footer .credit a {
   transition: 0.3s;
 }
 
-.modal4-content {
+.tekateki-content {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   text-shadow: none !important;
 }
 
-.modal4-content img {
+/* .tekateki-content::-webkit-scrollbar {
+  color: var(--main);
+} */
+
+
+.tekateki-content img {
   height: 20rem;
   width: 20rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
 
-.modal4-content p {
+.tekateki-content p {
   font-size: 1.2rem;
   line-height: 1.8rem;
   margin-top: 1.2rem;
@@ -1161,7 +1195,7 @@ footer .credit a {
   color: var(--main);
 }
 
-.modal4-content a {
+.tekateki-content a {
   display: flex;
   gap: 1rem;
   width: 12rem;
@@ -1173,7 +1207,7 @@ footer .credit a {
   text-align: center;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
 }
-/* modal 4 end */
+.
 
 /* Styling Umum untuk Semua Kontainer Modal */
 
@@ -1213,7 +1247,7 @@ footer .credit a {
   .menu .row {
     display: grid;
     /* Ubah 40rem menjadi sekitar 25rem - 30rem agar bisa muat 3 kolom */
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1.5rem; /* Tambahkan gap agar antar kartu ada jarak */
     margin-top: 2rem;
   }
@@ -1254,6 +1288,7 @@ footer .credit a {
     width: 30rem;
     height: 100vh;
     transition: 0.3s;
+    color: var(--main);
   }
 
   .navbar .navbar-nav.active {
@@ -1261,7 +1296,7 @@ footer .credit a {
   }
 
   .navbar .navbar-nav a {
-    color: #000;
+    color: var(--primary);
     display: block;
     margin: 2rem;
     padding: 0.5rem;
@@ -1283,6 +1318,15 @@ footer .credit a {
     right: 2rem;
     width: 90%;
   }
+
+  .navbar .search-form input {
+    color: var(--main);
+  }
+
+   .navbar .search-form input::placeholder {
+    color: var(--main);
+  }
+
 
   .shopping-cart {
     border-radius: 15px 0 0 15px;

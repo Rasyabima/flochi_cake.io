@@ -67,6 +67,8 @@ document.querySelectorAll(".close-icon").forEach((btn) => {
   });
 });
 
+
+
 // CLICK LUAR MODAL
 window.addEventListener("click", function (e) {
   document.querySelectorAll(
@@ -76,6 +78,29 @@ window.addEventListener("click", function (e) {
       modal.style.display = "none";
     }
   });
+});
+
+
+// open teka teki modal
+document.querySelector("#teka-teki-button").addEventListener("click", function (e) {
+  e.preventDefault();
+  const tekaTekiModal = document.querySelector("#teka-teki-modal");
+  if (tekaTekiModal) tekaTekiModal.style.display = "flex";
+});
+
+// close teka teki modal
+document.querySelector("#close-teka-teki").addEventListener("click", function (e) {
+  e.preventDefault();
+  const tekaTekiModal = document.querySelector("#teka-teki-modal");
+  if (tekaTekiModal) tekaTekiModal.style.display = "none";
+});
+
+// click luar teka teki modal
+window.addEventListener("click", function (e) {
+  const tekaTekiModal = document.querySelector("#teka-teki-modal");
+  if (e.target === tekaTekiModal) {
+    tekaTekiModal.style.display = "none";
+  }
 });
 
 
