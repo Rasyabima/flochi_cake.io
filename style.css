@@ -16,10 +16,12 @@
   outline: none;
   border: none;
   text-decoration: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
 }
 
 body {
-  font-family: "Baloo Da 2", sans-serif;
+  font-family: "Baloo Da 2","Poppins", sans-serif;
   background-color: var(--bg);
   color: var(--main);
   text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.6);
@@ -31,7 +33,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%; /* fungsi 7% mempertahankan ukuran 7% padding di semua ukuran layar */
-  border-bottom: 3px solid var(--main);
+  /* border-bottom: 3px solid var(--main); */
   backdrop-filter: blur(7px); /* Efek kaca transparan */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
   border-bottom: 1px solid rgba(247, 195, 126, 0.2); /* Border lebih tipis */
@@ -790,6 +792,7 @@ footer .links a {
   color: var(--main);
   padding: 0.7rem 1rem;
   font-size: 1.2rem;
+  margin-bottom: 2px;
 }
 
 footer .links a:hover {
@@ -822,7 +825,7 @@ footer .credit a {
     0,
     0,
     0,
-    0.85
+    0.5
   ); /* Background luar lebih gelap agar fokus */
   backdrop-filter: blur(5px); /* Efek blur di belakang modal */
 }
@@ -836,6 +839,7 @@ footer .credit a {
   border-radius: 20px;
   width: 80%;
   max-width: 800px;
+  height: 60%;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
@@ -878,14 +882,21 @@ footer .credit a {
 }
 
 .modal-content img {
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
+  border-radius: 10px;
 }
 
+.modal-content h3 {
+ font-size: 2rem;
+  text-shadow: none !important;
+}
+
+
 .modal-content p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.8rem;
   margin-top: 1.2rem;
   text-shadow: none !important;
@@ -905,6 +916,11 @@ footer .credit a {
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
+.modal-content .product-price {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
 /* modal 2  */
 .modal2 {
   display: none;
@@ -919,7 +935,7 @@ footer .credit a {
     0,
     0,
     0,
-    0.85
+    0.4
   ); /* Background luar lebih gelap agar fokus */
   backdrop-filter: blur(5px); /* Efek blur di belakang modal */
 }
@@ -933,6 +949,7 @@ footer .credit a {
   border-radius: 20px;
   width: 80%;
   max-width: 800px;
+  height: 60%;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
@@ -975,10 +992,16 @@ footer .credit a {
 }
 
 .modal2-content img {
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.modal2-content h3 {
+  font-size: 2rem;
+  text-shadow: none !important;
 }
 
 .modal2-content p {
@@ -1002,6 +1025,12 @@ footer .credit a {
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
+.modal2-content .product-price {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+
 /* modal 2 end */
 
 /* modal 3 start */
@@ -1018,7 +1047,7 @@ footer .credit a {
     0,
     0,
     0,
-    0.85
+    0.4
   ); /* Background luar lebih gelap agar fokus */
   backdrop-filter: blur(5px); /* Efek blur di belakang modal */
 }
@@ -1032,6 +1061,7 @@ footer .credit a {
   border-radius: 20px;
   width: 80%;
   max-width: 800px;
+  height: 60%;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
@@ -1074,11 +1104,18 @@ footer .credit a {
 }
 
 .modal3-content img {
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
+  border-radius: 10px;
 }
+
+.modal3-content h3 {
+ font-size: 2rem;
+  text-shadow: none !important;
+}
+
 
 .modal3-content p {
   font-size: 1.2rem;
@@ -1100,6 +1137,10 @@ footer .credit a {
   text-align: center;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
 }
+.modal3-content .product-price {
+  font-weight: bold;
+  margin-top: 1rem;
+}
 
 /* modal 3 end */
 
@@ -1118,7 +1159,7 @@ footer .credit a {
     0,
     0,
     0,
-    0.85
+    0.4
   ); /* Background luar lebih gelap agar fokus */
   backdrop-filter: blur(5px); /* Efek blur di belakang modal */
 }
@@ -1134,8 +1175,11 @@ footer .credit a {
   max-width: 800px;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  
+  text-align: left;
+ 
   overflow: auto;
+    justify-content: center; /* Mengetengahkan secara horizontal */
+  align-items: center;  
 }
 
 @keyframes modalMuncul {
@@ -1170,44 +1214,62 @@ footer .credit a {
 }
 
 .tekateki-content {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   text-shadow: none !important;
+
 }
 
-/* .tekateki-content::-webkit-scrollbar {
-  color: var(--main);
-} */
 
 
-.tekateki-content img {
-  height: 20rem;
-  width: 20rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-}
 
 .tekateki-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.8rem;
   margin-top: 1.2rem;
+  font-weight: 600;
   text-shadow: none !important;
   color: var(--main);
+   
 }
 
-.tekateki-content a {
+.tekateki-content ul li {
+  margin-left: 2rem;
+  font-weight: 500;
+  line-height: 30px;
+
+}
+
+.tekateki-content .next-button  {
   display: flex;
-  gap: 1rem;
-  width: 12rem;
-  color: #fff;
+  justify-content: center; /* Mengetengahkan secara horizontal */
+  align-items: center;     /* Mengetengahkan secara vertikal jika ada tinggi lebih */
+  margin-top: 20px;
+  
+}
+
+.tekateki-content .next-button .tekateki-web{
+  display: inline-block;
+  text-align: center;
+  padding: 20px 40px;
+  margin: 2rem;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--main);
   background-color: var(--hover);
   margin-top: 1rem;
-  padding: 1rem 1.6rem;
-  justify-content: center;
-  text-align: center;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  
 }
-.
+
+
+
+.tekateki-content .next-button a:hover {
+  color: var(--first);
+  cursor: pointer;
+}
+
 
 /* Styling Umum untuk Semua Kontainer Modal */
 
@@ -2108,19 +2170,58 @@ footer .credit a {
     border-radius: 20px;
   }
 
-  .modal4-content img {
-    height: 12rem;
-    width: 12rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 20px;
-  }
+ 
+  /* Pastikan container modal fleksibel di HP */
+.tekateki-container {
+  background-color: var(--primary);
+  color: var(--main);
+  padding: 2rem;
+  width: 90%; /* Menggunakan persentase agar tidak melebar keluar layar HP */
+  max-width: 500px; /* Batas lebar maksimal di desktop */
+  border-radius: 1.5rem;
+  position: relative;
+  margin: auto; /* Membantu pengetengahan jika parent-nya flex */
+}
 
-  .modal5-content img {
-    height: 12rem;
-    width: 12rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 20px;
-  }
+/* Mengetengahkan semua teks di dalam modal */
+.tekateki-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/* Mengatur list agar teksnya rata kiri tapi posisinya di tengah */
+.tekateki-content ul {
+  text-align: left;
+  display: inline-block;
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+/* Mengetengahkan tombol "Mulai Teka Teki" */
+.next-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.tekateki-web {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap; /* Mencegah teks terpotong ke bawah */
+  transition: 0.3s;
+}
+
+.tekateki-web:hover {
+  background-color: var(--hover);
+}
 }

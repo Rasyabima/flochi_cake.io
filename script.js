@@ -104,3 +104,27 @@ window.addEventListener("click", function (e) {
 });
 
 
+// teka teki 2
+// open teka teki modal
+document.querySelector("#teka-teki2-button").addEventListener("click", function (e) {
+  e.preventDefault();
+  const tekaTekiModal2 = document.querySelector("#teka-teki-modal2");
+  if (tekaTekiModal2) tekaTekiModal2.style.display = "flex";
+});
+
+// close teka teki modal
+document.querySelector("#close-teka-teki2").addEventListener("click", function (e) {
+  e.preventDefault();
+  const tekaTekiModal2 = document.querySelector("#teka-teki-modal2");
+  if (tekaTekiModal2) tekaTekiModal2.style.display = "none";
+});
+
+// click luar teka teki modal
+window.addEventListener("click", function (e) {
+  const tekaTekiModal2 = document.querySelector("#teka-teki-modal2");
+  if (e.target === tekaTekiModal2) {
+    tekaTekiModal2.style.display = "none";
+  }
+});
+
+
