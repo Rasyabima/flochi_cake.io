@@ -1162,11 +1162,13 @@ overflow: auto;
 }
 
 .tekateki3-content .input-group input {
+  height: 3rem;
   padding: 0.5rem;
+  font-size: 1.2rem;
   border-radius: 5px;
   border: 1px solid var(--main);
   margin: 1rem 0;
-  width: 80%;
+  width: 70%;
   background-color: var(--primary);
   color: var(--main);
 }
@@ -1182,8 +1184,9 @@ overflow: auto;
   padding: 1rem 3rem;
   border-radius: 5px;
   font-weight: bold;
-  border: 1px solid var(--main);
-  box-shadow: rgba(0, 0, 0, 0.3);
+  /* border: 1px solid var(--main); */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  margin-bottom: 2px;
 }
 
 
