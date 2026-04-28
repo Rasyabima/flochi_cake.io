@@ -17,7 +17,7 @@
   border: none;
   text-decoration: none;
   scrollbar-width: thin;
-  scrollbar-color: var(--primary) transparent;
+  scrollbar-color: var(--main) transparent;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
   color: var(--main);
   text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.6);
   scrollbar-width: thin;
-  scrollbar-color: var(--primary) transparent;
+  scrollbar-color: var(--main) transparent;
 }
 
 /* navbar */
@@ -1357,7 +1357,7 @@ footer .credit a {
   /* position: relative; */
   position: relative; /* Wajib agar tombol "terkunci" di dalam box ini */
   padding-bottom: 60px; /* Tambahkan ruang di bawah agar teks list tidak tertutup tombol */
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   margin: auto;
   border-radius: 1.5rem;
@@ -1373,7 +1373,7 @@ footer .credit a {
   color: var(--main);
   font-weight: bold;
   bottom: 15px; /* Jarak dari bawah kontainer */
-  left: 20px;
+  left: 10px;
   border: 2px solid var(--first);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1397,7 +1397,7 @@ footer .credit a {
   color: var(--main);
   font-weight: bold;
   bottom: 15px; /* Jarak dari bawah kontainer */
-  right: 20px;
+  right: 10px;
   border: 2px solid var(--first);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1635,7 +1635,7 @@ footer .credit a {
 }
 
 .kartu-link-modal-container .kartu1-image img {
-  width: 40%;
+  width: 20%;
   height: 60%;
   object-fit: cover;
   border-radius: 15px;
@@ -2235,6 +2235,8 @@ footer .credit a {
     font-size: 60%;
   }
 
+  
+
   .tekateki3 .kartu-wrapper {
     grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk mobile juga */
     gap: 10px;
@@ -2289,7 +2291,7 @@ footer .credit a {
   /* hero */
 
   .hero {
-    min-height: 85vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     background-image: url("img/ultracake.png");
