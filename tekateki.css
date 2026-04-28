@@ -16,7 +16,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-   scrollbar-width: thin;
+  scrollbar-width: thin;
   scrollbar-color: var(--primary) transparent;
 }
 
@@ -457,7 +457,6 @@ body {
   flex: 1 1 45rem;
   padding: 5rem 2rem;
   text-align: center;
-  
 }
 
 .contact .row form .input-group {
@@ -497,14 +496,12 @@ body {
   cursor: pointer;
   border-radius: 10px;
   font-size: 1rem;
-   transition: 0.3s;
+  transition: 0.3s;
 }
 
 .contact .row form .btn:hover {
   box-shadow: rgba(0, 0, 0, 0.5);
   color: var(--first);
- 
-  
 }
 /* footer */
 
@@ -528,6 +525,10 @@ footer .socials a {
 footer .socials a:hover {
   color: var(--hover);
   transition: 0.3s;
+}
+
+footer .links {
+  margin-bottom: 5px;
 }
 
 footer .links a {
@@ -857,33 +858,40 @@ footer .credit a {
   top: 0;
   width: 100%;
   height: 100%;
-  /* overflow: auto; */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.3
-  ); /* Background luar lebih gelap agar fokus */
-  backdrop-filter: blur(5px); /* Efek blur di belakang modal */
-}
+  align-items: center;
+  justify-content: center;
+  /* overflow: auto; */\n  background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);\n  backdrop-filter: blur(8px); /* Efek blur di belakang modal */\n  animation: backgroundPulse 4s ease-in-out infinite;\n}\n\n@keyframes backgroundPulse {\n  0%, 100% { background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%); }\n  50% { background: radial-gradient(circle, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 100%); }\n}
 
 .tekateki2-container {
   position: relative;
   margin: 2% auto;
-  padding: 1.5rem;
-  animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background-color: var(--primary);
+  padding: 2.5rem;
+  animation: slideInDown 0.6s ease-out; /* Animasi masuk dari atas */
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(247, 195, 126, 0.2);
+  background: linear-gradient(135deg, #6e2819 0%, #8b3a22 50%, #5a1f14 100%);
   color: var(--main);
-  padding: 2rem;
   width: 90%; /* Menggunakan persentase agar tidak melebar keluar layar HP */
-  max-width: 500px; /* Batas lebar maksimal di desktop */
-  border-radius: 1.5rem;
-height: auto;
-overflow: auto;
-  position: relative;
+  max-width: 550px; /* Batas lebar maksimal di desktop */
+  border-radius: 20px;
+  height: auto;
+  overflow: auto;
   margin: auto; /* Membantu pengetengahan jika parent-nya flex */
   scrollbar-width: thin;
+  border: 2px solid rgba(247, 195, 126, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes modalMuncul {
@@ -913,8 +921,24 @@ overflow: auto;
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.tekateki2-container #close-teka-teki2:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .tekateki2-content {
@@ -926,31 +950,69 @@ overflow: auto;
 
 .tekateki2-content h1 {
   margin-top: 2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(120deg, var(--main) 0%, var(--first) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(247, 195, 126, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(247, 195, 126, 0.8);
+  }
 }
 
 .tekateki2-content p {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  margin-top: 1.2rem;
+  font-size: 1.15rem;
+  line-height: 2rem;
+  margin-top: 1.5rem;
   text-shadow: none !important;
   color: var(--main);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tekateki2-content .small {
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.8rem;
-  margin-top: 1.2rem;
+  margin-top: 2rem;
   text-shadow: none !important;
-  color: var(--main);
+  color: var(--first);
+  font-style: italic;
+  padding: 1rem;
+  background-color: rgba(171, 58, 32, 0.3);
+  border-left: 4px solid var(--first);
+  border-radius: 5px;
+  animation: fadeInUp 1s ease-out;
 }
 
 .tekateki2-content .button {
   position: relative; /* Wajib agar tombol "terkunci" di dalam box ini */
   padding-bottom: 60px; /* Tambahkan ruang di bawah agar teks list tidak tertutup tombol */
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
   border-radius: 1.5rem;
 }
@@ -958,13 +1020,26 @@ overflow: auto;
 .tekateki2-content .button .next {
   position: absolute;
   display: inline-block;
-  background-color: var(--hover);
-  padding: 15px 30px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, var(--hover) 0%, #d54820 100%);
+  padding: 15px 40px;
+  border-radius: 50px;
   color: var(--main);
   font-weight: bold;
-  bottom: 20px; /* Jarak dari bawah kontainer */
-  right: 5px;
+  bottom: 0; /* Jarak dari bawah kontainer */
+  right: 20px;
+  border: 2px solid var(--first);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(171, 58, 32, 0.4);
+}
+
+.tekateki2-content .button .next:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(171, 58, 32, 0.6);
+  background: linear-gradient(135deg, #d54820 0%, var(--hover) 100%);
 }
 
 /* teka teki ke 2 */
@@ -976,35 +1051,33 @@ overflow: auto;
   top: 0;
   width: 100%;
   height: 100%;
+  align-items: center;
+  justify-content: center;
   /* overflow: auto; */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.4
-  ); /* Background luar lebih gelap agar fokus */
-  backdrop-filter: blur(5px); /* Efek blur di belakang modal */
-}
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);\n  backdrop-filter: blur(8px); /* Efek blur di belakang modal */\n  animation: backgroundPulse 4s ease-in-out infinite;\n}
 
 .tekateki3-container {
   position: relative;
   display: flex;
   flex-direction: column;
   margin: 2% auto;
-  padding: 1.5rem;
-  animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background-color: var(--primary);
+  padding: 2.5rem;
+  animation: slideInDown 0.6s ease-out; /* Animasi halus saat terbuka */
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(247, 195, 126, 0.2);
+  background: linear-gradient(135deg, #6e2819 0%, #8b3a22 50%, #5a1f14 100%);
   color: var(--main);
-  /* padding: 2rem; */
-  max-height: 80vh;
+  max-height: 85vh;
   width: 90%; /* Menggunakan persentase agar tidak melebar keluar layar HP */
-  max-width: 850px; /* Batas lebar maksimal di desktop */
-  border-radius: 1.5rem;
+  max-width: 900px; /* Batas lebar maksimal di desktop */
+  border-radius: 20px;
   margin: auto; /* Membantu pengetengahan jika parent-nya flex */
   overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--primary) transparent;
+  border: 2px solid rgba(247, 195, 126, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 @keyframes modalMuncul {
@@ -1034,8 +1107,25 @@ overflow: auto;
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.tekateki3-container #close-teka-teki3:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .tekateki3-content {
@@ -1047,7 +1137,16 @@ overflow: auto;
 
 .tekateki3-content h2 {
   margin-top: 2rem;
-  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  background: linear-gradient(120deg, var(--main) 0%, var(--first) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 3s ease-in-out infinite;
 }
 
 .tekateki3-content p {
@@ -1068,24 +1167,44 @@ overflow: auto;
 .tekateki3 .kartu1 {
   position: relative;
   text-align: center;
-  padding: 0.8rem;
-  margin: 1rem;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding-left: 2rem;
-  background: linear-gradient(145deg, #7a2d1c, #632417); /* Gradasi halus */
-  border: none;
+  padding: 1rem;
+  margin: 0.8rem;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #8b3a22, #6e2819); /* Gradasi halus */
+  border: 2px solid rgba(247, 195, 126, 0.2);
   text-align: center;
-  box-shadow: var(--shadow);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
+  position: relative;
+}
+
+.tekateki3 .kartu1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(247, 195, 126, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.tekateki3 .kartu1:hover::before {
+  left: 100%;
 }
 
 .tekateki3 .kartu1:hover {
-  transform: translateY(-10px); /* Efek melayang saat hover */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transform: translateY(-15px) scale(1.05); /* Efek melayang dan zoom saat hover */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(247, 195, 126, 0.3);
+  border-color: rgba(247, 195, 126, 0.5);
 }
 
 .tekateki3 .kartu1-icons {
@@ -1110,9 +1229,10 @@ overflow: auto;
   height: 200px;
   /* object-fit: cover; */
   /* border-radius: 0.5rem; */
-  border-radius: 5px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
-  transition: transform 0.5s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 2px solid rgba(247, 195, 126, 0.3);
 }
 
 .tekateki3 .kartu1:hover img {
@@ -1145,51 +1265,83 @@ overflow: auto;
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
-  background-color: var(--hover);
+  margin-top: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--hover) 0%,
+    rgba(171, 58, 32, 0.8) 100%
+  );
   width: 90%;
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 1.5rem;
+  border-radius: 15px;
   color: var(--main);
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgba(247, 195, 126, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
 .tekateki3-content .input-group label {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--main);
 }
 
 .tekateki3-content .input-group input {
   height: 3rem;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  border: 1px solid var(--main);
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 2px solid var(--main);
   margin: 1rem 0;
-  width: 70%;
-  background-color: var(--primary);
+  width: 75%;
+  background: linear-gradient(135deg, #5a1f14 0%, var(--primary) 100%);
   color: var(--main);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.tekateki3-content .input-group input:focus {
+  outline: none;
+  background: linear-gradient(135deg, #8b3a22 0%, #6e2819 100%);
+  border-color: var(--first);
+  box-shadow: 0 0 20px rgba(247, 195, 126, 0.5);
+  transform: scale(1.02);
 }
 
 .tekateki3-content .input-group input::placeholder {
   color: rgba(255, 229, 82, 0.5);
-  
-} 
-
-.tekateki3-content .input-group button {
-  background-color: var(--primary);
-  color: var(--main);
-  padding: 1rem 3rem;
-  border-radius: 5px;
-  font-weight: bold;
-  /* border: 1px solid var(--main); */
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  margin-bottom: 2px;
 }
 
+.tekateki3-content .input-group button {
+  background: linear-gradient(135deg, var(--hover) 0%, #d54820 100%);
+  color: var(--main);
+  padding: 1.2rem 3.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  border: 2px solid var(--first);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
 
+.tekateki3-content .input-group button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(171, 58, 32, 0.6);
+  background: linear-gradient(135deg, #d54820 0%, var(--hover) 100%);
+}
+
+.tekateki3-content .input-group button:active {
+  transform: translateY(-1px);
+}
 
 .tekateki3-content .kartu-link,
 .kartu-link2,
@@ -1209,31 +1361,55 @@ overflow: auto;
   max-width: 800px;
   margin: auto;
   border-radius: 1.5rem;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
 }
 
 .tekateki3-content .button .back {
   position: absolute;
   display: inline-block;
-  background-color: var(--hover);
-  padding: 15px 30px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, var(--hover) 0%, #d54820 100%);
+  padding: 12px 35px;
+  border-radius: 50px;
   color: var(--main);
   font-weight: bold;
-  bottom: 10px; /* Jarak dari bawah kontainer */
-  left: 0;
+  bottom: 15px; /* Jarak dari bawah kontainer */
+  left: 20px;
+  border: 2px solid var(--first);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 15px rgba(171, 58, 32, 0.4);
+}
+
+.tekateki3-content .button .back:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(171, 58, 32, 0.6);
 }
 
 .tekateki3-content .button .saksi-link {
   position: absolute;
   display: inline-block;
-  background-color: var(--hover);
-  padding: 15px 30px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, var(--hover) 0%, #d54820 100%);
+  padding: 12px 35px;
+  border-radius: 50px;
   color: var(--main);
   font-weight: bold;
-  bottom: 10px; /* Jarak dari bawah kontainer */
-  right: 0;
+  bottom: 15px; /* Jarak dari bawah kontainer */
+  right: 20px;
+  border: 2px solid var(--first);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 15px rgba(171, 58, 32, 0.4);
+}
+
+.tekateki3-content .button .saksi-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(171, 58, 32, 0.6);
 }
 
 .saksi {
@@ -1244,32 +1420,41 @@ overflow: auto;
   top: 0;
   width: 100%;
   height: 100%;
-  /* overflow: auto; */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.2
-  ); /* Background luar lebih gelap agar fokus */
-  backdrop-filter: blur(5px); /* Efek blur di belakang modal */
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  backdrop-filter: blur(8px);
+  animation: backgroundPulse 4s ease-in-out infinite;
 }
 
 .saksi-container {
   position: relative;
   margin: 2% auto;
-  padding: 1.5rem;
-  animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background-color: var(--primary);
+  padding: 2.5rem;
+  animation: scaleIn 0.5s ease-out; /* Animasi zoom masuk */
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 50px rgba(247, 195, 126, 0.25);
+  background: linear-gradient(135deg, #6e2819 0%, #8b3a22 50%, #5a1f14 100%);
   color: var(--main);
-  padding: 2rem;
   width: 90%; /* Menggunakan persentase agar tidak melebar keluar layar HP */
-  max-width: 500px; /* Batas lebar maksimal di desktop */
-  border-radius: 1.5rem;
-
-  position: relative;
+  max-width: 550px; /* Batas lebar maksimal di desktop */
+  border-radius: 20px;
   margin: auto; /* Membantu pengetengahan jika parent-nya flex */
   scrollbar-width: thin;
+  border: 2px solid rgba(247, 195, 126, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes modalMuncul {
@@ -1287,8 +1472,24 @@ overflow: auto;
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.saksi-container #closex:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .saksi-content {
@@ -1300,17 +1501,33 @@ overflow: auto;
 
 .saksi-content h3 {
   margin-top: 0.5rem;
-  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  background: linear-gradient(120deg, var(--main) 0%, var(--first) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .saksi-content p {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 500;
-  line-height: 2;
-  margin-top: 1.2rem;
+  line-height: 2.2rem;
+  margin-top: 1.5rem;
   text-shadow: none !important;
   color: var(--main);
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease-out;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(247, 195, 126, 0.2);
+}
+
+.saksi-content p:last-of-type {
+  border-bottom: none;
 }
 
 /* kartu link 1-7 modal */
@@ -1335,27 +1552,47 @@ overflow: auto;
 .kartu-link-modal-container {
   position: relative;
   margin: 2% auto;
-  padding: 1.5rem;
-  animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background-color: var(--primary);
+  padding: 2.5rem;
+  animation: slideInDown 0.6s ease-out; /* Animasi halus saat terbuka */
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(247, 195, 126, 0.2);
+  background: linear-gradient(135deg, #6e2819 0%, #8b3a22 50%, #5a1f14 100%);
   color: var(--main);
-  padding: 2rem;
-  max-height: 80vh;
-  width: auto; /* Menggunakan persentase agar tidak melebar keluar layar HP */
-  max-width: 850px; /* Batas lebar maksimal di desktop */
-  border-radius: 1.5rem;
+  max-height: 85vh;
+  width: 90%;
+  max-width: 900px; /* Batas lebar maksimal di desktop */
+  border-radius: 20px;
   margin: auto; /* Membantu pengetengahan jika parent-nya flex */
   overflow: auto;
   scrollbar-width: thin;
+  border: 2px solid rgba(247, 195, 126, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .kartu-link-modal-container #close-kartu-link1 {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  z-index: 10001;
+}
+
+.kartu-link-modal-container #close-kartu-link1:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .kartu-link-modal-container .kartu1-content {
@@ -1370,15 +1607,24 @@ overflow: auto;
 
 .kartu-link-modal-container .kartu1-content h3 {
   margin-top: 2%;
-  font-size: 3rem;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(120deg, var(--main) 0%, var(--first) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .kartu-link-modal-container .kartu1-content .kartu1-p {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  margin-top: 1.2rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  margin-top: 1.5rem;
   text-shadow: none !important;
   color: var(--main);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .kartu-link-modal-container .kartu1-image {
@@ -1389,65 +1635,165 @@ overflow: auto;
 }
 
 .kartu-link-modal-container .kartu1-image img {
-  width: 30%;
-  height: 50%;
+  width: 40%;
+  height: 60%;
   object-fit: cover;
-  border-radius: 0.5rem;
-  border-radius: 5px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
-  transition: transform 0.5s ease;
+  border-radius: 15px;
+  border: 3px solid rgba(247, 195, 126, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .kartu-link-modal-container .kartu1-image img:hover {
-  transform: scale(1.1); /* Zoom gambar saat hover */
+  transform: scale(1.08) rotateY(5deg); /* Zoom dan efek 3D saat hover */
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(247, 195, 126, 0.3);
+  border-color: rgba(247, 195, 126, 0.6);
 }
 
 .kartu-link-modal-container #close-kartu-link2 {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.kartu-link-modal-container #close-kartu-link2:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .kartu-link-modal-container #close-kartu-link3 {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.kartu-link-modal-container #close-kartu-link3:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .kartu-link-modal-container #close-kartu-link4 {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.kartu-link-modal-container #close-kartu-link4:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .kartu-link-modal-container #close-kartu-link5 {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.kartu-link-modal-container #close-kartu-link5:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .kartu-link-modal-container #close-kartu-link6 {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.kartu-link-modal-container #close-kartu-link6:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .kartu-link-modal-container #close-kartu-link7 {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.kartu-link-modal-container #close-kartu-link7:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 /* ending modal */
@@ -1461,30 +1807,40 @@ overflow: auto;
   height: 100%;
   align-items: center;
   justify-content: center;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.2
-  ); /* Background luar lebih gelap agar fokus */
-  backdrop-filter: blur(5px); /* Efek blur di belakang modal */
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.5) 100%);
+  backdrop-filter: blur(8px);
+  animation: backgroundPulse 4s ease-in-out infinite;
 }
 
 .ending-container {
   position: relative;
   display: flex;
   margin: 2% auto;
-  padding: 1.5rem;
-  animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background-color: var(--primary);
+  padding: 3rem;
+  animation: fadeInScale 0.7s ease-out; /* Animasi dramatis saat terbuka */
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(171, 58, 32, 0.4);
+  background: linear-gradient(135deg, #5a1f14 0%, #8b3a22 50%, #6e2819 100%);
   color: var(--main);
-  padding: 2rem;
   width: 90%; /* Menggunakan persentase agar tidak melebar keluar layar HP */
-  max-width: 700px; /* Batas lebar maksimal di desktop */
-  border-radius: 1.5rem;
+  max-width: 750px; /* Batas lebar maksimal di desktop */
+  border-radius: 20px;
   margin: auto; /* Membantu pengetengahan jika parent-nya flex */
   scrollbar-width: thin;
+  border: 3px solid rgba(247, 195, 126, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 @keyframes modalMuncul {
@@ -1502,8 +1858,24 @@ overflow: auto;
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  color: #ffffff;
-  transition: 0.3s;
+  color: var(--first);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.ending-container #close-ending:hover {
+  color: var(--hover);
+  opacity: 1;
+  background-color: rgba(171, 58, 32, 0.3);
+  transform: rotate(90deg) scale(1.2);
+  box-shadow: 0 0 15px rgba(247, 195, 126, 0.4);
 }
 
 .ending-content {
@@ -1514,21 +1886,58 @@ overflow: auto;
 }
 
 .ending-content h3 {
-  margin-top: 2rem;
-  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 3rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  background: linear-gradient(
+    120deg,
+    var(--hover) 0%,
+    var(--main) 50%,
+    var(--first) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse 3s ease-in-out infinite;
+}
 
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 .ending-content p {
-  font-size: 1.5rem;
-  line-height: 1.8rem;
-  line-height: 2;
-  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+  margin-top: 1.5rem;
   text-shadow: none !important;
-   font-weight: 500;
-
+  font-weight: 500;
   color: var(--main);
+  letter-spacing: 0.8px;
+  padding: 1.2rem 0;
+  border-left: 4px solid var(--hover);
+  padding-left: 1.5rem;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Styling Umum untuk Semua Kontainer Modal */
@@ -1592,16 +2001,15 @@ overflow: auto;
   }
 
   .navbar .navbar-extra a {
-  margin: rem;
-  background-color: var(--primary);
-  padding: 1rem 2.2rem;
-  color: var(--main);
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-shadow: none !important;
-  border-radius: 10px;
-}
-
+    margin: rem;
+    background-color: var(--primary);
+    padding: 1rem 2.2rem;
+    color: var(--main);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-shadow: none !important;
+    border-radius: 10px;
+  }
 
   .navabr .navbar-extra .x {
     padding: 10px 30px;
@@ -1765,8 +2173,6 @@ overflow: auto;
 
   /* teka teki 2 */
 
-
-
   .tekateki3 .kartu-wrapper {
     grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
     gap: 10px;
@@ -1778,20 +2184,18 @@ overflow: auto;
     padding: 0.5rem;
   }
 
-   
-
   .tekateki3 .kartu1-image img {
-  width: 100px;
-  height: 200px;
-  /* object-fit: cover; */
-  /* border-radius: 0.5rem; */
-  border-radius: 5px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
-  transition: transform 0.5s ease;
-}
+    width: 100px;
+    height: 200px;
+    /* object-fit: cover; */
+    /* border-radius: 0.5rem; */
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
+    transition: transform 0.5s ease;
+  }
 
   .kartu1-content {
-    padding: 0.5rem; 
+    padding: 0.5rem;
     font-size: 1.2rem;
   }
 
@@ -1805,29 +2209,25 @@ overflow: auto;
     height: 200px;
   }
   .kartu-link-modal-container .kartu1-image img {
-  width: 30%;
-  height: 50%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border-radius: 5px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
-  transition: transform 0.5s ease;
+    width: 30%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
+    transition: transform 0.5s ease;
+  }
+
+  .kartu-link-modal-container .kartu1-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-shadow: none !important;
+  }
 }
-
-.kartu-link-modal-container .kartu1-content {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  text-shadow: none !important;
-}
-
-
-
-}
-
 
 /* mobile */
 @media (max-width: 450px) {
@@ -1973,7 +2373,7 @@ overflow: auto;
     height: auto;
   }
 
-    .tekateki3 .kartu-wrapper {
+  .tekateki3 .kartu-wrapper {
     grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
     gap: 10px;
   }
@@ -1981,27 +2381,25 @@ overflow: auto;
   .tekateki3 .kartu1 {
     margin-top: 2rem;
     padding: 0.1rem;
-   
   }
 
   .tekateki3 .kartu1-image img {
-  width: 80px;
-  height: 100px;
-  /* object-fit: cover; */
-  /* border-radius: 0.5rem; */
-  border-radius: 5px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
-  transition: transform 0.5s ease;
-}
-
+    width: 80px;
+    height: 100px;
+    /* object-fit: cover; */
+    /* border-radius: 0.5rem; */
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
+    transition: transform 0.5s ease;
+  }
 
   .kartu-link-modal .kartu-link-modal-container {
     width: 80%;
     max-width: 600px;
     height: auto;
-     margin-top: 20px;
-      justify-content: center;
-  align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
   }
 
   .kartu-link-modal .kartu1-image img {
@@ -2010,24 +2408,24 @@ overflow: auto;
   }
 
   .kartu-link-modal-container .kartu1-image img {
-  width: 30%;
-  height: 50%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border-radius: 5px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
-  transition: transform 0.5s ease;
-}
+    width: 30%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
+    transition: transform 0.5s ease;
+  }
 
-.kartu-link-modal-container .kartu1-content {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  text-shadow: none !important;
-}
+  .kartu-link-modal-container .kartu1-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-shadow: none !important;
+  }
 
   /* menu */
 

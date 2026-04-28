@@ -58,7 +58,6 @@
             
             </a>
 
-
               <a href="#" id="teka-teki-button">
               <svg width="23" height="23" fill="none"stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#book"/>
@@ -79,6 +78,12 @@
           <label for="search-box"></label>
          </div>
         <!-- search form end -->
+
+        <!-- notif cart start-->
+         <div class="notif" id="notif-box">
+              <h3>Pesanan anda sudah ditambahkan ke keranjang</h3>
+         </div>
+        <!-- notif cart end-->
 
         <!-- shopping cart start -->
          <div class="shopping-cart" x-data>
@@ -277,7 +282,7 @@
         <template x-for="(item, index) in items" x-key="index">
         <div class="product-card">
           <div class="product-icons">
-            <a href="#" @click.prevent="$store.cart.add(item)">
+            <a href="#" @click.prevent="$store.cart.add(item)" class="add-to-cart-button">
               <svg width="24" height="24"fill="none"stroke="currentColor"stroke-width="2"stroke-linecap="round" stroke-linejoin="round">
           <use href="img/feather-sprite.svg#shopping-cart" />
           </svg>
@@ -495,7 +500,7 @@
      </div>
     <!-- teka teki Modal start-->
 
-    
+
 
 
 

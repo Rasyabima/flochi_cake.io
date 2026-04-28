@@ -280,7 +280,7 @@ if (submitCodeBtn) {
     const code = answerInput.value.toLowerCase().trim();
     console.log("Code entered:", code);
 
-    if (code === "the ending") {
+    if (code === "non existent") {
       // Jika benar, tampilkan ending
       console.log("Correct code, showing ending");
       // Tutup modal teka-teki dulu

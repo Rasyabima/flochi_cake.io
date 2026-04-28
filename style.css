@@ -152,6 +152,26 @@ body {
   margin: 0rem;
 }
 
+/* notif */
+.notif {
+    position: absolute;
+    top: 100%;
+    right: 35%;
+    background-color: #fff;
+    transform: scaleY(0); /* Default scale 0 */
+    transform-origin: top;
+    transition: transform 0.3s ease; /* Animasi smooth */
+    z-index: 99;
+    text-shadow: none !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Keadaan saat aktif (terbuka) */
+.notif.notif-active {
+    transform: scaleY(1);
+}
+
 /* shopping cart */
 #shopping-cart-button {
   position: relative;
@@ -1300,7 +1320,7 @@ footer .credit a {
 
   /* about */
 
-  .about {
+  .about, .menu, .products {
     height: auto;
   }
 
@@ -1405,6 +1425,21 @@ footer .credit a {
   /* ... */
 }
 
+.notif {
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    background-color: #fff;
+    transform: scaleY(0); /* Default scale 0 */
+    transform-origin: top;
+    transition: transform 0.3s ease; /* Animasi smooth */
+    z-index: 99;
+    text-shadow: none !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.7);
+}
+
   /* .form-container {
  background-color: none;
 }
@@ -1430,8 +1465,14 @@ footer .credit a {
   }
 
   /* abaout */
+
+
+
+
+  }
   .about .row {
     flex-wrap: wrap;
+    
   }
 
   .about .row .about-img img {

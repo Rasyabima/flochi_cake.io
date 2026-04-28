@@ -154,3 +154,18 @@ if (contactForm) {
     window.open(url, "_blank");
   });
 }
+
+// notif ketika produk ditambahkan ke keranjang
+const notifBox = document.querySelector("#notif-box");
+document.addEventListener("click", function (e) {
+  const addButton = e.target.closest(".add-to-cart-button");
+  if (!addButton) return;
+
+  if (notifBox) {
+    notifBox.classList.add("notif-active");
+    clearTimeout(window.notifTimeout);
+    window.notifTimeout = setTimeout(() => {
+      notifBox.classList.remove("notif-active");
+    }, 3000);
+  }
+});
