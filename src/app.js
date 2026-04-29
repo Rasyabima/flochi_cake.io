@@ -166,6 +166,6 @@ document.addEventListener("click", function (e) {
     clearTimeout(window.notifTimeout);
     window.notifTimeout = setTimeout(() => {
       notifBox.classList.remove("notif-active");
-    }, 3000);
+    }, 2000);
   }
 });
