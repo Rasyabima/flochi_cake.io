@@ -802,7 +802,7 @@ p {
 /* footer */
 
 footer {
-  background-color: var(--primary);
+   background: linear-gradient(135deg, #5a1f14 0%, #8b3a22 50%, #6e2819 100%);
   text-align: center;
   padding: 1rem 3rem;
   margin-top: 10rem;
