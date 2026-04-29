@@ -882,7 +882,7 @@ footer .credit a {
   width: 90%; /* Menggunakan persentase agar tidak melebar keluar layar HP */
   max-width: 550px; /* Batas lebar maksimal di desktop */
   border-radius: 20px;
-  height: auto;
+  height: 80%;
   overflow: auto;
   margin: auto; /* Membantu pengetengahan jika parent-nya flex */
   scrollbar-width: thin;
