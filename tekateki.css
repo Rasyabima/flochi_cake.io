@@ -31,20 +31,27 @@ body {
 
 /* navbar */
 .navbar {
-  display: flex;
+   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%; /* fungsi 7% mempertahankan ukuran 7% padding di semua ukuran layar */
-  border-bottom: 3px solid var(--main);
-  backdrop-filter: blur(7px); /* Efek kaca transparan */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
-  border-bottom: 1px solid rgba(247, 195, 126, 0.2); /* Border lebih tipis */
+  /* border-bottom: 3px solid var(--main); */
+  backdrop-filter: blur(10px); /* Efek kaca transparan */
+  /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(247, 195, 126, 0.2);  */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 
+  background: linear-gradient(
+    180deg,
+    rgba(110, 40, 25, 0.88),
+    rgba(35, 11, 8, 0.82)
+  );
+  border-bottom: 1px solid rgba(247, 195, 126, 0.22);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
   /* top, left, right 0 berfungsi untuk menarik atas kanan kiri agar penuh satu layar*/
 }
 
