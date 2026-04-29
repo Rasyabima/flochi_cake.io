@@ -49,14 +49,18 @@ p {
   padding: 1.4rem 7%; /* fungsi 7% mempertahankan ukuran 7% padding di semua ukuran layar */
   /* border-bottom: 3px solid var(--main); */
   backdrop-filter: blur(7px); /* Efek kaca transparan */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
-  border-bottom: 1px solid rgba(247, 195, 126, 0.2); /* Border lebih tipis */
+  /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(247, 195, 126, 0.2);  */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 
+  background: linear-gradient(180deg, rgba(110, 40, 25, 0.88), rgba(35, 11, 8, 0.82));
+    border-bottom: 1px solid rgba(247, 195, 126, 0.22);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    
   /* top, left, right 0 berfungsi untuk menarik atas kanan kiri agar penuh satu layar*/
 }
 
@@ -352,7 +356,7 @@ p {
   background-size: cover;
   background-position: center;
   position: relative;
-  /* background-attachment: fixed */
+  background-attachment: fixed
 }
 
 /* membuat gradasi hitam */
@@ -494,7 +498,7 @@ p {
 
 /* menu section */
 .menu {
-  background-color: var(--primary);
+   background: linear-gradient(135deg, #5a1f14 0%, #8b3a22 50%, #6e2819 100%);
 
   min-height: 100vh; /* Minimal setinggi layar, tapi akan memanjang jika konten bertambah */
   height: auto; /* Pastikan height auto agar menyesuaikan konten */
@@ -629,6 +633,7 @@ p {
 .products {
   min-height: 100vh; /* Minimal setinggi layar, tapi akan memanjang jika konten bertambah */
   height: auto; /* Pastikan height auto agar menyesuaikan konten */
+  background: radial-gradient(circle at bottom left, rgba(255, 221, 189, 0.11), transparent 38%), linear-gradient(180deg, #6f2618, rgba(110, 40, 25, 0.96));
 }
 
 .products h3 {
@@ -648,13 +653,12 @@ p {
 
 .products .product-card {
   text-align: center;
-  border: 4px solid var(--main);
+  /* border: 4px solid var(--main); */
   padding: 2ewm;
   margin: 0.5rem;
   border-radius: 10px;
   text-shadow: none !important;
-
-  background: linear-gradient(145deg, #7a2d1c, #632417); /* Gradasi halus */
+       background: linear-gradient(145deg, #7a2d1c, #632417); /* Gradasi halus */
   border: none;
   box-shadow: var(--shadow);
   transition:
@@ -863,7 +867,10 @@ footer .credit a {
 
 .modal-container {
   position: relative;
-  background-color: var(--primary); /* Warna putih agar bersih */
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(171, 58, 32, 0.4);
+  background: linear-gradient(135deg, #5a1f14 0%, #8b3a22 50%, #6e2819 100%);
   color: var(--main); /* Teks gelap agar mudah dibaca */
   margin: 5% auto;
   padding: 1.5rem;
@@ -873,7 +880,7 @@ footer .credit a {
   height: 60%;
   overflow: auto;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
 }
 
 @keyframes modalMuncul {
@@ -972,8 +979,11 @@ footer .credit a {
 }
 
 .modal2-container {
-  position: relative;
-  background-color: var(--primary); /* Warna putih agar bersih */
+  position: relative;  
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(171, 58, 32, 0.4);
+  background: linear-gradient(135deg, #5a1f14 0%, #8b3a22 50%, #6e2819 100%);
   color: var(--main); /* Teks gelap agar mudah dibaca */
   margin: 5% auto;
   padding: 1.5rem;
@@ -983,7 +993,7 @@ footer .credit a {
   overflow: auto;
   height: 60%;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
 }
 
 @keyframes modalMuncul {
@@ -1084,8 +1094,11 @@ footer .credit a {
 }
 
 .modal3-container {
-  position: relative;
-  background-color: var(--primary); /* Warna putih agar bersih */
+  position: relative; 
+   box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(171, 58, 32, 0.4);
+  background: linear-gradient(135deg, #5a1f14 0%, #8b3a22 50%, #6e2819 100%);
   color: var(--main); /* Teks gelap agar mudah dibaca */
   margin: 5% auto;
   padding: 1.5rem;
@@ -1095,7 +1108,7 @@ footer .credit a {
   height: 60%;
   overflow: auto;
   animation: modalMuncul 0.4s ease; /* Animasi halus saat terbuka */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+ 
 }
 
 @keyframes modalMuncul {
@@ -1566,10 +1579,12 @@ footer .credit a {
   padding: 1rem;
   margin: 2rem;
   border-radius: 10px;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
   padding-left: 2rem;
-
-  background: linear-gradient(145deg, #7a2d1c, #632417); /* Gradasi halus */
+    box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(171, 58, 32, 0.4);
+  background: linear-gradient(135deg, #5a1f14 0%, #8b3a22 50%, #6e2819 100%);
   border: none;
   box-shadow: var(--shadow);
   transition:
@@ -1735,7 +1750,7 @@ footer .credit a {
 
 [class$="-container"] {
   position: relative;
-  background-color: var(--primary);
+  background: linear-gradient(145deg, #7a2d1c, #632417); /* Gradasi halus */
   color: var(--main); /* Warna teks isi modal agar terbaca */
   margin: 10% auto;
   padding: 1.5rem;
