@@ -1822,6 +1822,7 @@ footer .credit a {
 .ending-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   margin: 2% auto;
   padding: 3rem;
   animation: fadeInScale 0.7s ease-out; /* Animasi dramatis saat terbuka */
@@ -1833,10 +1834,12 @@ footer .credit a {
   width: 90%; /* Menggunakan persentase agar tidak melebar keluar layar HP */
   max-width: 750px; /* Batas lebar maksimal di desktop */
   border-radius: 20px;
-  margin: auto; /* Membantu pengetengahan jika parent-nya flex */
+  width: 80%;
+  height: 80%; /* Membantu pengetengahan jika parent-nya flex */
   scrollbar-width: thin;
   border: 3px solid rgba(247, 195, 126, 0.4);
   backdrop-filter: blur(10px);
+  overflow: auto;
 }
 
 @keyframes fadeInScale {
